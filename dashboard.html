@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="referrer" content="no-referrer" />
+  <title>Missão Transformação — Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@300;400;500;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #f5f3ef;
+      --surface:      #ffffff;
+      --border:       #e4dfd6;
+      --text:         #2c2924;
+      --text2:        #8c8070;
+      --gold:         #b8962e;
+      --gold-lt:      #d4ad4f;
+      --gold-pale:    #e8d49a;
+      --gold-bg:      #fffbf0;
+      --success:      #38a169;
+      --danger:       #e53e3e;
+      --sidebar:      #19160f;
+      --sidebar-text: #c8bfb0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── LOGIN ── */
+    #login-screen {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--sidebar) 0%, #2c2924 100%);
+    }
+
+    .login-box {
+      background: #fff;
+      border-radius: 1.25rem;
+      padding: 3rem;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+    }
+
+    .login-logo {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: -.01em;
+      margin-bottom: 0.2rem;
+      color: var(--text);
+    }
+
+    .login-logo em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .login-sub {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--text2);
+      margin-bottom: 2rem;
+    }
+
+    .login-label {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 0.4rem;
+    }
+
+    .login-input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid var(--border);
+      border-radius: 0.5rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      outline: none;
+      margin-bottom: 1rem;
+      transition: border-color 0.2s;
+    }
+
+    .login-input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(184,150,46,.1); }
+
+    .login-btn {
+      width: 100%;
+      padding: 0.85rem;
+      background: var(--gold);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 0.5rem;
+    }
+
+    .login-btn:hover { background: var(--gold-lt); }
+
+    .login-error {
+      color: var(--danger);
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 0.75rem;
+      display: none;
+    }
+
+    /* ── DASHBOARD LAYOUT ── */
+    #dashboard { display: none; min-height: 100vh; }
+
+    .dash-layout { display: flex; min-height: 100vh; }
+
+    /* Sidebar */
+    .sidebar {
+      width: 248px;
+      background: var(--sidebar);
+      color: var(--sidebar-text);
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      position: fixed;
+      top: 0; left: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .sidebar-logo {
+      padding: 1.75rem 1.5rem 1.25rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .sidebar-logo-main {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: -.01em;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+
+    .sidebar-logo-main em { font-style: normal; color: var(--gold-lt); }
+
+    .sidebar-logo-sub {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: #555;
+    }
+
+    .sidebar-label {
+      padding: 1.25rem 1.5rem 0.5rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #444;
+    }
+
+    .sidebar-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.65rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--sidebar-text);
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+      border-left: 2px solid transparent;
+    }
+
+    .sidebar-item:hover { background: rgba(255,255,255,0.04); color: #fff; }
+
+    .sidebar-item.active {
+      background: rgba(184,150,46,0.12);
+      color: var(--gold-lt);
+      border-left-color: var(--gold);
+    }
+
+    .sidebar-icon { font-size: 0.95rem; width: 18px; text-align: center; flex-shrink: 0; }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .logout-btn {
+      width: 100%;
+      padding: 0.6rem;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 0.4rem;
+      color: #777;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: .05em;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .logout-btn:hover { background: rgba(255,255,255,0.05); color: #ccc; }
+
+    /* Main content */
+    .dash-main { margin-left: 248px; flex: 1; display: flex; flex-direction: column; }
+
+    .dash-topbar {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0; z-index: 10;
+    }
+
+    .dash-topbar-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .dash-topbar-actions { display: flex; gap: 0.75rem; align-items: center; }
+
+    .btn-action {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1.1rem;
+      border: none;
+      border-radius: 0.4rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: .04em;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-save { background: var(--text); color: #fff; }
+    .btn-save:hover { background: #3d3830; }
+    .btn-export { background: var(--gold); color: #fff; }
+    .btn-export:hover { background: var(--gold-lt); }
+
+    .save-toast {
+      display: none;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      color: var(--success);
+      font-weight: 500;
+    }
+
+    /* Sections */
+    .dash-content { padding: 2rem; flex: 1; }
+    .dash-section { display: none; }
+    .dash-section.active { display: block; }
+
+    .section-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 0.35rem;
+      letter-spacing: -.01em;
+    }
+
+    .section-desc {
+      font-size: 0.85rem;
+      color: var(--text2);
+      margin-bottom: 2rem;
+    }
+
+    /* Cards */
+    .edit-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .edit-card-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--text2);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .edit-card-title .badge {
+      background: var(--gold);
+      color: #fff;
+      padding: 0.15rem 0.5rem;
+      border-radius: 0.25rem;
+      font-size: 0.6rem;
+    }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .field-row.full { grid-template-columns: 1fr; }
+    .field-row.thirds { grid-template-columns: 1fr 1fr 1fr; }
+
+    .field-group { display: flex; flex-direction: column; gap: 0.4rem; }
+
+    .field-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: #555;
+      letter-spacing: .04em;
+    }
+
+    .field-hint { font-size: 0.67rem; color: #aaa; margin-top: -0.2rem; }
+
+    .field-input, .field-textarea {
+      padding: 0.6rem 0.85rem;
+      border: 1.5px solid var(--border);
+      border-radius: 0.4rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      background: #fafaf8;
+    }
+
+    .field-input:focus, .field-textarea:focus {
+      border-color: var(--gold);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(184,150,46,.08);
+    }
+
+    .field-textarea { resize: vertical; min-height: 88px; line-height: 1.65; }
+
+    /* Info banner */
+    .info-banner {
+      background: var(--gold-bg);
+      border: 1px solid rgba(184,150,46,.35);
+      border-radius: 0.65rem;
+      padding: 1rem 1.25rem;
+      font-size: 0.82rem;
+      color: #6b4c00;
+      margin-bottom: 2rem;
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      line-height: 1.65;
+    }
+
+    .info-banner-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.05rem; }
+
+    /* Ministry card header */
+    .mc-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mc-num {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--text2);
+    }
+
+    .mc-num strong { color: var(--gold); margin-right: 0.5rem; }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════ LOGIN ════════════════ -->
+<div id="login-screen">
+  <div class="login-box">
+    <div class="login-logo"><em>Missão</em> Transformação</div>
+    <div class="login-sub">Painel de Administração</div>
+    <label class="login-label" for="l-email">E-mail</label>
+    <input class="login-input" type="email" id="l-email" placeholder="adm@transformacao.org.br" autocomplete="username" />
+    <label class="login-label" for="l-pass">Senha</label>
+    <input class="login-input" type="password" id="l-pass" placeholder="••••••••" autocomplete="current-password" />
+    <button class="login-btn" onclick="doLogin()">Entrar</button>
+    <div class="login-error" id="login-error">E-mail ou senha incorretos.</div>
+  </div>
+</div>
+
+<!-- ════════════════ DASHBOARD ════════════════ -->
+<div id="dashboard">
+  <div class="dash-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <div class="sidebar-logo-main"><em>Missão</em> Transformação</div>
+        <div class="sidebar-logo-sub">Dashboard</div>
+      </div>
+      <div class="sidebar-label">Seções do Site</div>
+      <div class="sidebar-item active" onclick="showSection('hero', this)">
+        <span class="sidebar-icon">🏠</span> Hero
+      </div>
+      <div class="sidebar-item" onclick="showSection('sobre', this)">
+        <span class="sidebar-icon">✦</span> Sobre
+      </div>
+      <div class="sidebar-item" onclick="showSection('ministerios', this)">
+        <span class="sidebar-icon">🙌</span> Ministérios
+      </div>
+      <div class="sidebar-item" onclick="showSection('loja', this)">
+        <span class="sidebar-icon">👕</span> Loja
+      </div>
+      <div class="sidebar-item" onclick="showSection('contato', this)">
+        <span class="sidebar-icon">📩</span> Contato
+      </div>
+      <div class="sidebar-footer">
+        <button class="logout-btn" onclick="doLogout()">Sair da conta</button>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="dash-main">
+
+      <!-- TOPBAR -->
+      <div class="dash-topbar">
+        <div class="dash-topbar-title" id="topbar-title">Hero</div>
+        <div class="dash-topbar-actions">
+          <div class="save-toast" id="save-toast">✓ Salvo com sucesso</div>
+          <button class="btn-action btn-save" onclick="saveData()">💾 Salvar</button>
+          <button class="btn-action btn-export" onclick="exportJSON()">⬇ Exportar JSON</button>
+        </div>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="dash-content">
+
+        <div class="info-banner">
+          <span class="info-banner-icon">💡</span>
+          <div>
+            <strong>Como funciona:</strong> Edite os textos abaixo e clique em <strong>Salvar</strong> para guardar no navegador. Quando quiser atualizar o site, clique em <strong>Exportar JSON</strong> e envie o arquivo ao desenvolvedor.
+          </div>
+        </div>
+
+        <!-- ── HERO ── -->
+        <div class="dash-section active" id="sec-hero">
+          <div class="section-title">Hero</div>
+          <div class="section-desc">Primeira tela — slideshow de fundo com título, parágrafo e botões.</div>
+
+          <div class="edit-card">
+            <div class="edit-card-title">Eyebrow (texto pequeno acima do título)</div>
+            <div class="field-row full">
+              <div class="field-group">
+                <input class="field-input" id="hero_eyebrow" value="Curitiba · Paraná · Brasil" />
+              </div>
+            </div>
+          </div>
+
+          <div class="edit-card">
+            <div class="edit-card-title">Título Principal <span class="badge">H1</span></div>
+            <div class="field-row">
+              <div class="field-group">
+                <label class="field-label">Palavra em destaque (dourado)</label>
+                <div class="field-hint">Aparece antes do nome principal</div>
+                <input class="field-input" id="hero_title_em" value="Missão" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Restante do título</label>
+                <input class="field-input" id="hero_title_main" value="Transformação" />
+              </div>
+            </div>
+          </div>
+
+          <div class="edit-card">
+            <div class="edit-card-title">Parágrafo</div>
+            <div class="field-row full">
+              <div class="field-group">
+                <textarea class="field-textarea" id="hero_paragraph">Uma comunidade comprometida com a transformação de vidas, famílias e gerações em Curitiba e além.</textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="edit-card">
+            <div class="edit-card-title">Botões</div>
+            <div class="field-row">
+              <div class="field-group">
+                <label class="field-label">Botão primário (branco)</label>
+                <input class="field-input" id="hero_btn1" value="Conhecer a Missão" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Botão secundário (contorno)</label>
+                <input class="field-input" id="hero_btn2" value="Seguir no Instagram" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── SOBRE ── -->
+        <div class="dash-section" id="sec-sobre">
+          <div class="section-title">Sobre</div>
+          <div class="section-desc">Seção de apresentação da missão com texto, imagem e estatísticas.</div>
+
+          <div class="edit-card">
+            <div class="edit-card-title">Título <span class="badge">H2</span></div>
+            <div class="field-row">
+              <div class="field-group">
+                <label class="field-label">Texto antes do destaque</label>
+                <input class="field-input" id="sobre_title_before" value="Transformando vidas" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Destaque em dourado</label>
+                <input class="field-input" id="sobre_title_em" value="desde 2019" />
+              </div>
+            </div>
+          </div>
+
+          <div class="edit-card">
+            <div class="edit-card-title">Parágrafos</div>
+            <div class="field-row full">
+              <div class="field-group">
+                <label class="field-label">Parágrafo 1</label>
+                <textarea class="field-textarea" id="sobre_p1">A Missão Transformação nasceu do desejo de ver famílias, jovens e casais crescerem com propósito em Curitiba, no Paraná e em todo o Brasil. Somos uma comunidade comprometida com a transformação genuína de vidas por meio da fé, do serviço e do relacionamento.</textarea>
+              </div>
+            </div>
+            <div class="field-row full">
+              <div class="field-group">
+                <label class="field-label">Parágrafo 2</label>
+                <textarea class="field-textarea" id="sobre_p2">Acreditamos que cada pessoa carrega um chamado único — e que, juntos, somos mais fortes. Por isso, desenvolvemos ministérios que atendem diferentes etapas da vida: homens, jovens, casais, mulheres e famílias encontram aqui um espaço de crescimento, comunhão e propósito.</textarea>
+              </div>
+            </div>
+            <div class="field-row full">
+              <div class="field-group">
+                <label class="field-label">Parágrafo 3</label>
+                <textarea class="field-textarea" id="sobre_p3">Com múltiplos ministérios que alcançam diferentes faixas etárias e contextos, somos uma comunidade que caminha junta na fé e no propósito — firmes no que cremos, abertos ao próximo.</textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="edit-card">
+            <div class="edit-card-title">Estatísticas (3 blocos)</div>
+            <div class="field-row thirds">
+              <div class="field-group">
+                <label class="field-label">Número 1</label>
+                <input class="field-input" id="stat1_n" value="2019" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Número 2</label>
+                <input class="field-input" id="stat2_n" value="8+" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Número 3</label>
+                <input class="field-input" id="stat3_n" value="CWB" />
+              </div>
+            </div>
+            <div class="field-row thirds">
+              <div class="field-group">
+                <label class="field-label">Rótulo 1</label>
+                <input class="field-input" id="stat1_l" value="Fundação" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Rótulo 2</label>
+                <input class="field-input" id="stat2_l" value="Ministérios" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Rótulo 3</label>
+                <input class="field-input" id="stat3_l" value="Curitiba PR" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── MINISTÉRIOS ── -->
+        <div class="dash-section" id="sec-ministerios">
+          <div class="section-title">Ministérios</div>
+          <div class="section-desc">Os 8 cards de ministérios — tag, nome, descrição e link do Instagram.</div>
+
+          <!-- Card 1: Forja -->
+          <div class="edit-card">
+            <div class="mc-num"><strong>01</strong> Forja</div>
+            <div class="field-row">
+              <div class="field-group">
+                <label class="field-label">Tag (ex: Homens)</label>
+                <input class="field-input" id="min1_tag" value="Homens" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Nome</label>
+                <input class="field-input" id="min1_name" value="Forja" />
+              </div>
+            </div>
+            <div class="field-row full">
+              <div class="field-group">
+                <label class="field-label">Descrição</label>
+                <textarea class="field-textarea" id="min1_desc">Ministério de formação de homens com caráter, propósito e fé, preparados para impactar suas famílias, seu trabalho e sua comunidade.</textarea>
+              </div>
+            </div>
+            <div class="field-row full">
+              <div class="field-group">
+                <label class="field-label">Link Instagram</label>
+                <input class="field-input" id="min1_ig" value="https://instagram.com" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Adrenalina -->
+          <div class="edit-card">
+            <div class="mc-num"><strong>02</strong> Adrenalina</div>
+            <div class="field-row">
+              <div class="field-group">
+                <label class="field-label">Tag</label>
+                <input class="field-input" id="min2_tag" value="Jovens" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Nome</label>
+                <input class="field-input" id="min2_name" value="Adrenalina" />
+              </div>
+            </div>
+            <div class="field-row full">
+              <div class="field-group">
+                <label class="field-label">Descrição</label>
+                <textarea class="field-textarea" id="min2_desc">Uma frente voltada para jovens, com energia, identidade e propósito, conectando vidas à verdade de Cristo por meio de experiências marcantes.</textarea>
+              </div>
+            </div>
+            <div class="field-row full">
+              <div class="field-group">
+                <label class="field-label">Link Instagram</label>
+                <input class="field-input" id="min2_ig" value="https://instagram.com" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Missão Casais -->
+          <div class="edit-card">
+            <div class="mc-num"><strong>03</strong> Missão Casais</div>
+            <div class="field-row">
+              <div class="field-group">
+                <label class="field-label">Tag</label>
+                <input class="field-input" id="min3_tag" value="Família" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Nome</label>
+                <input class="field-input" id="min3_name" value="Missão Casais" />
+              </div>
+            </div>
+            <div class="field-row full">
+              <div class="field-group">
+                <label class="field-label">Descrição</label>
+                <textarea class="field-textarea" id="min3_desc">Ministério dedicado ao fortalecimento do matrimônio, da aliança e da construção de lares firmados em propósito e unidade.</textarea>
+              </div>
+            </div>
+            <div class="field-row full">
+              <div class="field-group">
+                <label class="field-label">Link Instagram</label>
+                <input class="field-input" id="min3_ig" value="https://instagram.com" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Legendários -->
+          <div class="edit-card">
+            <div class="mc-num"><strong>04</strong> Legendários</div>
+            <div class="field-row">
+              <div class="field-group">
+                <label class="field-label">Tag</label>
+                <input class="field-input" id="min4_tag" value="Legado" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Nome</label>
+                <input class="field-input" id="min4_name" value="Legendários" />
+              </div>
+            </div>
+            <div class="field-row full">
+              <div class="field-group">
+                <label class="field-label">Descrição</label>
+                <textarea class="field-textarea" id="min4_desc">Uma jornada que marcou homens e continua sendo parte da história da missão, despertando identidade, coragem e compromisso.</textarea>
+              </div>
+            </div>
+            <div class="field-row full">
+              <div class="field-group">
+                <label class="field-label">Link Instagram</label>
+                <input class="field-input" id="min4_ig" value="https://instagram.com" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Legado -->
+          <div class="edit-card">
+            <div class="mc-num"><strong>05</strong> Legado</div>
+            <div class="field-row">
+              <div class="field-group">
+                <label class="field-label">Tag</label>
+                <input class="field-input" id="min5_tag" value="Gerações" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Nome</label>
+                <input class="field-input" id="min5_name" value="Legado" />
+              </div>
+            </div>
+            <div class="field-row full">
+              <div class="field-group">
+                <label class="field-label">Descrição</label>
+                <textarea class="field-textarea" id="min5_desc">Um chamado para formar líderes e deixar marcas que atravessem gerações, com impacto dentro e fora da igreja.</textarea>
+              </div>
+            </div>
+            <div class="field-row full">
+              <div class="field-group">
+                <label class="field-label">Link Instagram</label>
+                <input class="field-input" id="min5_ig" value="https://instagram.com" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: REM -->
+          <div class="edit-card">
+            <div class="mc-num"><strong>06</strong> REM</div>
+            <div class="field-row">
+              <div class="field-group">
+                <label class="field-label">Tag</label>
+                <input class="field-input" id="min6_tag" value="Casais" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Nome</label>
+                <input class="field-input" id="min6_name" value="REM" />
+              </div>
+            </div>
+            <div class="field-row full">
+              <div class="field-group">
+                <label class="field-label">Descrição</label>
+                <textarea class="field-textarea" id="min6_desc">Reto de Empoderamiento Matrimonial — uma jornada intencional para casais que desejam amadurecer sua união e viver um casamento saudável.</textarea>
+              </div>
+            </div>
+            <div class="field-row full">
+              <div class="field-group">
+                <label class="field-label">Link Instagram</label>
+                <input class="field-input" id="min6_ig" value="https://instagram.com" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 7: Conexão Mulheres -->
+          <div class="edit-card">
+            <div class="mc-num"><strong>07</strong> Conexão Mulheres</div>
+            <div class="field-row">
+              <div class="field-group">
+                <label class="field-label">Tag</label>
+                <input class="field-input" id="min7_tag" value="Mulheres" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Nome</label>
+                <input class="field-input" id="min7_name" value="Conexão Mulheres" />
+              </div>
+            </div>
+            <div class="field-row full">
+              <div class="field-group">
+                <label class="field-label">Descrição</label>
+                <textarea class="field-textarea" id="min7_desc">Um espaço de encontro, identidade e fortalecimento para mulheres que desejam crescer juntas na fé, no cuidado e no propósito.</textarea>
+              </div>
+            </div>
+            <div class="field-row full">
+              <div class="field-group">
+                <label class="field-label">Link Instagram</label>
+                <input class="field-input" id="min7_ig" value="https://instagram.com" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 8: Mulheres em Oração -->
+          <div class="edit-card">
+            <div class="mc-num"><strong>08</strong> Mulheres em Oração</div>
+            <div class="field-row">
+              <div class="field-group">
+                <label class="field-label">Tag</label>
+                <input class="field-input" id="min8_tag" value="Oração" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Nome</label>
+                <input class="field-input" id="min8_name" value="Mulheres em Oração" />
+              </div>
+            </div>
+            <div class="field-row full">
+              <div class="field-group">
+                <label class="field-label">Descrição</label>
+                <textarea class="field-textarea" id="min8_desc">Mulheres unidas em intercessão, buscando a Deus juntas e crendo no poder transformador da oração sobre famílias e gerações.</textarea>
+              </div>
+            </div>
+            <div class="field-row full">
+              <div class="field-group">
+                <label class="field-label">Link Instagram</label>
+                <input class="field-input" id="min8_ig" value="https://instagram.com" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── LOJA ── -->
+        <div class="dash-section" id="sec-loja">
+          <div class="section-title">Loja</div>
+          <div class="section-desc">Os 8 produtos da loja oficial — nome, subtítulo e preço.</div>
+
+          <div class="edit-card">
+            <div class="edit-card-title">Cabeçalho da Loja</div>
+            <div class="field-row">
+              <div class="field-group">
+                <label class="field-label">Título (destaque em dourado)</label>
+                <input class="field-input" id="loja_title_em" value="Oficial" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Subtítulo</label>
+                <input class="field-input" id="loja_subtitle" value="Produtos exclusivos dos nossos ministérios. Vista sua identidade." />
+              </div>
+            </div>
+          </div>
+
+          <!-- Produtos Bonés -->
+          <div class="edit-card">
+            <div class="edit-card-title">Produto 1 — Boné Missão <span class="badge">Novo</span></div>
+            <div class="field-row thirds">
+              <div class="field-group">
+                <label class="field-label">Nome</label>
+                <input class="field-input" id="p1_name" value="Boné Missão" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Subtítulo</label>
+                <input class="field-input" id="p1_sub" value="Transformação · Branco/Bege" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Preço</label>
+                <input class="field-input" id="p1_price" value="R$ 69,90" />
+              </div>
+            </div>
+          </div>
+
+          <div class="edit-card">
+            <div class="edit-card-title">Produto 2 — Boné Forja <span class="badge">Destaque</span></div>
+            <div class="field-row thirds">
+              <div class="field-group">
+                <label class="field-label">Nome</label>
+                <input class="field-input" id="p2_name" value="Boné Forja" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Subtítulo</label>
+                <input class="field-input" id="p2_sub" value="Forja · Since 2019" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Preço</label>
+                <input class="field-input" id="p2_price" value="R$ 69,90" />
+              </div>
+            </div>
+          </div>
+
+          <div class="edit-card">
+            <div class="edit-card-title">Produto 3 — Boné Adrenalina <span class="badge">Novo</span></div>
+            <div class="field-row thirds">
+              <div class="field-group">
+                <label class="field-label">Nome</label>
+                <input class="field-input" id="p3_name" value="Boné Adrenalina" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Subtítulo</label>
+                <input class="field-input" id="p3_sub" value="Adrenalina · Since 2019" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Preço</label>
+                <input class="field-input" id="p3_price" value="R$ 69,90" />
+              </div>
+            </div>
+          </div>
+
+          <div class="edit-card">
+            <div class="edit-card-title">Produto 4 — Boné Casais</div>
+            <div class="field-row thirds">
+              <div class="field-group">
+                <label class="field-label">Nome</label>
+                <input class="field-input" id="p4_name" value="Boné Casais" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Subtítulo</label>
+                <input class="field-input" id="p4_sub" value="Missão Casais · Azul/Branco" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Preço</label>
+                <input class="field-input" id="p4_price" value="R$ 69,90" />
+              </div>
+            </div>
+          </div>
+
+          <div class="edit-card">
+            <div class="edit-card-title">Produto 5 — Camiseta Transformação</div>
+            <div class="field-row thirds">
+              <div class="field-group">
+                <label class="field-label">Nome</label>
+                <input class="field-input" id="p5_name" value="Camiseta Transformação" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Subtítulo</label>
+                <input class="field-input" id="p5_sub" value="Missão · Oversized · Bege" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Preço</label>
+                <input class="field-input" id="p5_price" value="R$ 89,90" />
+              </div>
+            </div>
+          </div>
+
+          <div class="edit-card">
+            <div class="edit-card-title">Produto 6 — Camiseta Família</div>
+            <div class="field-row thirds">
+              <div class="field-group">
+                <label class="field-label">Nome</label>
+                <input class="field-input" id="p6_name" value="Camiseta Família" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Subtítulo</label>
+                <input class="field-input" id="p6_sub" value="Missão Família · Oversized · Verde" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Preço</label>
+                <input class="field-input" id="p6_price" value="R$ 89,90" />
+              </div>
+            </div>
+          </div>
+
+          <div class="edit-card">
+            <div class="edit-card-title">Produto 7 — Camiseta Adrenalina <span class="badge">Novo</span></div>
+            <div class="field-row thirds">
+              <div class="field-group">
+                <label class="field-label">Nome</label>
+                <input class="field-input" id="p7_name" value="Camiseta Adrenalina" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Subtítulo</label>
+                <input class="field-input" id="p7_sub" value="Adrenalina · Oversized · Azul" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Preço</label>
+                <input class="field-input" id="p7_price" value="R$ 89,90" />
+              </div>
+            </div>
+          </div>
+
+          <div class="edit-card">
+            <div class="edit-card-title">Produto 8 — Camiseta Forja</div>
+            <div class="field-row thirds">
+              <div class="field-group">
+                <label class="field-label">Nome</label>
+                <input class="field-input" id="p8_name" value="Camiseta Forja" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Subtítulo</label>
+                <input class="field-input" id="p8_sub" value="Forja · Oversized · Camuflado" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Preço</label>
+                <input class="field-input" id="p8_price" value="R$ 89,90" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── CONTATO ── -->
+        <div class="dash-section" id="sec-contato">
+          <div class="section-title">Contato</div>
+          <div class="section-desc">Informações de contato, frase de destaque e cabeçalho da seção.</div>
+
+          <div class="edit-card">
+            <div class="edit-card-title">Cabeçalho da Seção</div>
+            <div class="field-row">
+              <div class="field-group">
+                <label class="field-label">Eyebrow</label>
+                <input class="field-input" id="ct_eyebrow" value="Fale conosco" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Subtítulo abaixo do título</label>
+                <input class="field-input" id="ct_sub" value="Tem dúvidas, quer conhecer mais ou participar de algum ministério? Estamos aqui." />
+              </div>
+            </div>
+          </div>
+
+          <div class="edit-card">
+            <div class="edit-card-title">Informações de Contato</div>
+            <div class="field-row">
+              <div class="field-group">
+                <label class="field-label">Localização</label>
+                <input class="field-input" id="ct_location" value="Curitiba, Paraná, Brasil" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Email</label>
+                <input class="field-input" id="ct_email" value="adm@transformacao.org.br" />
+              </div>
+            </div>
+            <div class="field-row full">
+              <div class="field-group">
+                <label class="field-label">Instagram (handle sem @)</label>
+                <input class="field-input" id="ct_instagram" value="missaotransformacao" />
+              </div>
+            </div>
+          </div>
+
+          <div class="edit-card">
+            <div class="edit-card-title">Frase de Destaque (quote)</div>
+            <div class="field-row full">
+              <div class="field-group">
+                <label class="field-label">Frase principal (dourado)</label>
+                <input class="field-input" id="ct_quote" value="JUNTOS NA JORNADA, FIRMES NO PROPÓSITO." />
+              </div>
+            </div>
+            <div class="field-row full">
+              <div class="field-group">
+                <label class="field-label">Texto de apoio</label>
+                <textarea class="field-textarea" id="ct_quote_sub" style="min-height:60px">Uma missão que não existe apenas para reunir pessoas, mas para formar vidas transformadas — em Curitiba e além.</textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /dash-content -->
+    </div><!-- /dash-main -->
+  </div>
+</div>
+
+<script>
+  // ── CONFIG ──
+  const AUTH_EMAIL   = 'adm@transformacao.org.br';
+  const PASS_HASH    = '5610373ead01986ac2fb2e53346fcc1e77649403b1ef330a04564fcac655b005';
+  const STORAGE_KEY  = 'missao_content';
+  const SESSION_KEY  = 'missao_session';
+  const SESSION_TTL  = 2 * 60 * 60 * 1000;
+  const MAX_ATTEMPTS = 5;
+  const LOCKOUT_MS   = 60 * 1000;
+
+  // ── RATE LIMITING ──
+  function getAttempts() {
+    try { return JSON.parse(sessionStorage.getItem('_la') || '{"n":0,"t":0}'); }
+    catch { return { n: 0, t: 0 }; }
+  }
+  function setAttempts(obj) { sessionStorage.setItem('_la', JSON.stringify(obj)); }
+  function isLocked() {
+    const a = getAttempts();
+    if (a.n >= MAX_ATTEMPTS && Date.now() - a.t < LOCKOUT_MS) return true;
+    if (a.n >= MAX_ATTEMPTS && Date.now() - a.t >= LOCKOUT_MS) setAttempts({ n: 0, t: 0 });
+    return false;
+  }
+
+  // ── SHA-256 ──
+  async function sha256(str) {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+  }
+
+  // ── LOGIN ──
+  async function doLogin() {
+    const errEl = document.getElementById('login-error');
+    errEl.style.display = 'none';
+    if (isLocked()) { errEl.textContent = 'Muitas tentativas. Aguarde 1 minuto.'; errEl.style.display = 'block'; return; }
+    const email = document.getElementById('l-email').value.trim().toLowerCase();
+    const pass  = document.getElementById('l-pass').value;
+    if (!email || !pass) { errEl.textContent = 'Preencha todos os campos.'; errEl.style.display = 'block'; return; }
+    const hash = await sha256(pass);
+    if (email === AUTH_EMAIL && hash === PASS_HASH) {
+      setAttempts({ n: 0, t: 0 });
+      sessionStorage.setItem(SESSION_KEY, Date.now().toString());
+      document.getElementById('login-screen').style.display = 'none';
+      document.getElementById('dashboard').style.display = 'block';
+      loadSaved();
+      startSessionWatch();
+    } else {
+      const a = getAttempts();
+      setAttempts({ n: a.n + 1, t: Date.now() });
+      const left = MAX_ATTEMPTS - (a.n + 1);
+      errEl.textContent = left > 0
+        ? `E-mail ou senha incorretos. ${left} tentativa(s) restante(s).`
+        : 'Conta bloqueada por 1 minuto.';
+      errEl.style.display = 'block';
+    }
+  }
+
+  // ── SESSION ──
+  let _sessionTimer = null;
+  function startSessionWatch() {
+    clearInterval(_sessionTimer);
+    _sessionTimer = setInterval(() => {
+      const ts = parseInt(sessionStorage.getItem(SESSION_KEY) || '0', 10);
+      if (!ts || Date.now() - ts > SESSION_TTL) doLogout();
+    }, 60000);
+  }
+
+  (function checkSession() {
+    const ts = parseInt(sessionStorage.getItem(SESSION_KEY) || '0', 10);
+    if (ts && Date.now() - ts < SESSION_TTL) {
+      document.getElementById('login-screen').style.display = 'none';
+      document.getElementById('dashboard').style.display = 'block';
+      loadSaved();
+      startSessionWatch();
+    }
+  })();
+
+  document.getElementById('l-email').addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
+  document.getElementById('l-pass').addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
+
+  function doLogout() {
+    clearInterval(_sessionTimer);
+    sessionStorage.removeItem(SESSION_KEY);
+    document.getElementById('dashboard').style.display = 'none';
+    document.getElementById('login-screen').style.display = 'flex';
+    document.getElementById('l-pass').value = '';
+    document.getElementById('l-email').value = '';
+  }
+
+  // ── NAVIGATION ──
+  function showSection(name, el) {
+    document.querySelectorAll('.dash-section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.sidebar-item').forEach(s => s.classList.remove('active'));
+    document.getElementById('sec-' + name).classList.add('active');
+    el.classList.add('active');
+    const titles = { hero:'Hero', sobre:'Sobre', ministerios:'Ministérios', loja:'Loja', contato:'Contato' };
+    document.getElementById('topbar-title').textContent = titles[name];
+  }
+
+  // ── COLLECT ──
+  function collectData() {
+    const ids = [
+      'hero_eyebrow','hero_title_em','hero_title_main','hero_paragraph','hero_btn1','hero_btn2',
+      'sobre_title_before','sobre_title_em','sobre_p1','sobre_p2','sobre_p3',
+      'stat1_n','stat1_l','stat2_n','stat2_l','stat3_n','stat3_l',
+      'min1_tag','min1_name','min1_desc','min1_ig',
+      'min2_tag','min2_name','min2_desc','min2_ig',
+      'min3_tag','min3_name','min3_desc','min3_ig',
+      'min4_tag','min4_name','min4_desc','min4_ig',
+      'min5_tag','min5_name','min5_desc','min5_ig',
+      'min6_tag','min6_name','min6_desc','min6_ig',
+      'min7_tag','min7_name','min7_desc','min7_ig',
+      'min8_tag','min8_name','min8_desc','min8_ig',
+      'loja_title_em','loja_subtitle',
+      'p1_name','p1_sub','p1_price','p2_name','p2_sub','p2_price',
+      'p3_name','p3_sub','p3_price','p4_name','p4_sub','p4_price',
+      'p5_name','p5_sub','p5_price','p6_name','p6_sub','p6_price',
+      'p7_name','p7_sub','p7_price','p8_name','p8_sub','p8_price',
+      'ct_eyebrow','ct_sub','ct_location','ct_email','ct_instagram','ct_quote','ct_quote_sub'
+    ];
+    const data = {};
+    ids.forEach(id => { const el = document.getElementById(id); if (el) data[id] = el.value; });
+    return data;
+  }
+
+  // ── SAVE ──
+  function saveData() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(collectData()));
+    const toast = document.getElementById('save-toast');
+    toast.style.display = 'flex';
+    setTimeout(() => toast.style.display = 'none', 2500);
+  }
+
+  // ── LOAD ──
+  function loadSaved() {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (!saved) return;
+    const data = JSON.parse(saved);
+    Object.entries(data).forEach(([id, val]) => { const el = document.getElementById(id); if (el) el.value = val; });
+  }
+
+  // ── EXPORT ──
+  function exportJSON() {
+    const data = collectData();
+    data._exportedAt = new Date().toLocaleString('pt-BR');
+    data._version = '1.0';
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href = url; a.download = 'missao-transformacao-content.json'; a.click();
+    URL.revokeObjectURL(url);
+  }
+</script>
+</body>
+</html>
