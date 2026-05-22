@@ -1,12 +1,12 @@
 # Missão Transformação — Site Institucional
 
-Site estático de uma página (`missao-transformacao.html`) para a comunidade/missão evangélica Missão Transformação, sediada em Curitiba, PR, Brasil.
+Site estático de uma página (`index.html`) para a comunidade/missão evangélica Missão Transformação, sediada em Curitiba, PR, Brasil.
 
 ## Estrutura do projeto
 
 ```
 transformacao/
-├── missao-transformacao.html   # Arquivo principal (todo HTML/CSS/JS inline)
+├── index.html                  # Arquivo principal (todo HTML/CSS/JS inline)
 ├── img/                        # Todas as imagens locais
 │   ├── Asset_16.png            # Logo (nav)
 │   ├── Screenshot_2.png        # Imagem da seção Sobre
