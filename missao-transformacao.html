@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Missão Transformação — Curitiba · Paraná · Brasil</title>
+<meta name="description" content="Missão Transformação é uma comunidade evangélica em Curitiba, PR, comprometida com a transformação de vidas, famílias e gerações desde 2019 — com ministérios para homens, jovens, casais e mulheres.">
+<meta name="keywords" content="Missão Transformação, igreja Curitiba, ministério evangélico, Forja, Adrenalina, Missão Casais, Curitiba Paraná">
+<meta name="author" content="Missão Transformação">
+<link rel="canonical" href="https://missaotransformacao.org.br/">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://missaotransformacao.org.br/">
+<meta property="og:title" content="Missão Transformação — Curitiba · Paraná · Brasil">
+<meta property="og:description" content="Uma comunidade comprometida com a transformação de vidas, famílias e gerações em Curitiba e além. Ministérios para cada etapa da vida.">
+<meta property="og:image" content="img/Slide_001.jpg">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Missão Transformação">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Missão Transformação — Curitiba · Paraná · Brasil">
+<meta name="twitter:description" content="Uma comunidade comprometida com a transformação de vidas, famílias e gerações em Curitiba e além.">
+<meta name="twitter:image" content="img/Slide_001.jpg">
+
+<!-- Schema.org Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Missão Transformação",
+  "url": "https://missaotransformacao.org.br",
+  "logo": "img/Asset_16.png",
+  "description": "Comunidade evangélica em Curitiba, PR, Brasil, comprometida com a transformação de vidas, famílias e gerações desde 2019.",
+  "foundingDate": "2019",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Curitiba",
+    "addressRegion": "Paraná",
+    "addressCountry": "BR"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "adm@transformacao.org.br",
+    "contactType": "customer service",
+    "availableLanguage": "Portuguese"
+  },
+  "sameAs": [
+    "https://instagram.com/missaotransformacao"
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream:#faf7f2; --white:#fff; --dark:#19160f; --charcoal:#2c2924;
+  --gold:#b8962e; --gold-lt:#d4ad4f; --gold-pale:#e8d49a;
+  --stone:#8c8070; --stone-lt:#c8bfb0; --muted:#63605a; --teal:#4a8fa8;
+  --pad:clamp(24px,5vw,48px);
+  --fh:'Plus Jakarta Sans',sans-serif; --fb:'Inter',system-ui,sans-serif; --fu:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1); --ease-out:cubic-bezier(.16,1,.3,1);
+  --radius:16px; --radius-sm:10px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{font-family:var(--fb);background:var(--cream);color:var(--dark);overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--cream)}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+
+/* LAYOUT */
+.wrap{max-width:1200px;margin:0 auto;padding:0 var(--pad)}
+.sec{padding:clamp(64px,8vw,100px) var(--pad)}
+.divider{width:100%;height:1px;background:linear-gradient(90deg,transparent 0%,var(--gold-pale) 30%,var(--gold) 50%,var(--gold-pale) 70%,transparent 100%);opacity:.5}
+.eyebrow{font-family:var(--fu);font-size:10px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:14px}
+.h2{font-family:var(--fh);font-size:clamp(28px,4vw,52px);font-weight:800;letter-spacing:-.02em;line-height:1.05;color:var(--charcoal);margin-bottom:16px}
+.h2 em{font-style:normal;font-weight:400;color:var(--gold)}
+.h2--w{color:#fff}
+.desc{font-family:var(--fb);font-size:15px;font-weight:300;line-height:1.85;color:var(--muted)}
+.desc--w{color:rgba(255,255,255,.5)}
+
+/* NAV */
+#nav{
+  position:fixed;top:20px;left:50%;transform:translateX(-50%);
+  z-index:200;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  padding:10px 16px 10px 14px;
+  background:rgba(250,247,242,.78);
+  backdrop-filter:blur(24px) saturate(1.5);
+  -webkit-backdrop-filter:blur(24px) saturate(1.5);
+  border:1px solid rgba(184,150,46,.15);
+  border-radius:999px;
+  box-shadow:0 8px 32px rgba(26,23,20,.1),0 1px 0 rgba(255,255,255,.6) inset;
+  transition:all .4s var(--ease);
+  white-space:nowrap;
+  max-width:calc(100vw - 32px);
+}
+#nav.s{
+  top:12px;
+  background:rgba(250,247,242,.94);
+  box-shadow:0 12px 40px rgba(26,23,20,.16),0 1px 0 rgba(255,255,255,.6) inset;
+}
+.nlogo{display:flex;align-items:center;gap:8px;text-decoration:none;flex-shrink:0}
+.nlogo img{height:38px;width:auto;filter:invert(1) brightness(.55) sepia(1) saturate(3) hue-rotate(2deg);transition:filter .3s var(--ease)}
+.nlogo img:hover{filter:invert(1) brightness(.75) sepia(1) saturate(4) hue-rotate(2deg)}
+.nlogo span{font-family:var(--fh);font-size:14px;font-weight:800;letter-spacing:-.01em;color:var(--charcoal)}
+.nlogo span b{color:var(--gold)}
+.nlinks{display:flex;gap:2px;list-style:none}
+.nlinks a{display:flex;align-items:center;gap:5px;font-family:var(--fu);font-size:11px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:all .25s var(--ease);padding:6px 10px;border-radius:999px}
+.nlinks a:hover{color:var(--gold);background:rgba(184,150,46,.08)}
+.nlinks a svg{flex-shrink:0;opacity:.7}
+.nsocial{display:flex;align-items:center;gap:2px;flex-shrink:0}
+.nig{
+  display:flex;align-items:center;justify-content:center;
+  width:30px;height:30px;border-radius:50%;
+  color:var(--charcoal);text-decoration:none;
+  transition:all .2s;
+}
+.nig:hover{background:rgba(26,23,20,.08);color:var(--gold)}
+.nig svg{width:15px;height:15px}
+
+/* HAMBURGER */
+.nav-burger{
+  display:none;flex-direction:column;justify-content:center;gap:5px;
+  width:34px;height:34px;background:none;border:none;cursor:pointer;
+  padding:4px;border-radius:8px;transition:background .2s;
+}
+.nav-burger:hover{background:rgba(26,23,20,.06)}
+.nav-burger span{display:block;width:18px;height:1.5px;background:var(--charcoal);border-radius:2px;transition:all .3s var(--ease);transform-origin:center}
+.nav-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+/* MOBILE MENU DRAWER */
+#mobile-menu{
+  display:none;position:fixed;inset:0;z-index:190;
+  background:rgba(250,247,242,.97);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  flex-direction:column;justify-content:center;align-items:center;gap:8px;
+  padding:80px 32px 40px;
+}
+#mobile-menu.open{display:flex}
+#mobile-menu a{
+  font-family:var(--fh);font-size:28px;font-weight:800;letter-spacing:-.02em;
+  color:var(--charcoal);text-decoration:none;padding:10px 0;
+  transition:color .2s;border-bottom:1px solid rgba(200,191,176,.3);width:100%;text-align:center;
+}
+#mobile-menu a:last-of-type{border-bottom:none}
+#mobile-menu a:hover{color:var(--gold)}
+.mmline{width:40px;height:2px;background:var(--gold);margin:16px auto 0;border-radius:2px}
+.mmfoot{display:flex;gap:16px;margin-top:24px}
+.mmfoot a{color:var(--stone);transition:color .2s}
+.mmfoot a:hover{color:var(--gold)}
+
+/* HERO */
+#hero{position:relative;height:100vh;min-height:600px;overflow:hidden}
+.hslide{position:absolute;inset:0;opacity:0;transition:opacity 2s ease}
+.hslide.on{opacity:1}
+.hbg{width:100%;height:100%;background-size:cover;background-position:center}
+.hov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,23,20,.25) 0%,rgba(26,23,20,.5) 50%,rgba(26,23,20,.72) 100%)}
+.hbody{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  color:#fff;width:92%;max-width:1000px;text-align:center;
+}
+.heye{
+  font-family:var(--fu);font-size:11px;font-weight:400;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--gold-lt);margin-bottom:20px;
+  display:flex;align-items:center;justify-content:center;gap:14px;
+}
+.heye::before,.heye::after{content:'';width:28px;height:1px;background:var(--gold-lt);flex-shrink:0}
+.hh1{
+  font-family:var(--fh);font-size:clamp(36px,6.5vw,90px);font-weight:800;
+  line-height:1;letter-spacing:-.03em;margin-bottom:22px;
+}
+.hh1 em{font-style:normal;font-weight:400;color:var(--gold-pale)}
+.hp{
+  font-family:var(--fb);font-size:clamp(14px,1.8vw,16px);font-weight:300;
+  line-height:1.8;color:rgba(255,255,255,.65);max-width:600px;margin:0 auto 36px;
+}
+.hbtns{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.hbtn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--fu);font-size:11px;font-weight:500;letter-spacing:.12em;
+  text-transform:uppercase;text-decoration:none;
+  padding:14px 26px;border-radius:999px;
+  transition:all .3s var(--ease);
+}
+.hbtn-primary{
+  color:var(--dark);background:rgba(255,255,255,.92);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.6);
+  box-shadow:0 4px 20px rgba(0,0,0,.15);
+}
+.hbtn-primary:hover{background:#fff;transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.2)}
+.hbtn-secondary{
+  color:rgba(255,255,255,.85);background:transparent;
+  border:1px solid rgba(255,255,255,.3);
+}
+.hbtn-secondary:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.5);transform:translateY(-2px)}
+.hbtn svg{width:14px;height:14px}
+.hdots{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;gap:10px}
+.hdot{width:20px;height:2px;background:rgba(255,255,255,.25);border-radius:1px;cursor:pointer;transition:all .5s ease}
+.hdot.on{width:44px;background:var(--gold-lt)}
+.scroll-hint{
+  position:absolute;bottom:32px;right:var(--pad);
+  display:flex;flex-direction:column;align-items:center;gap:7px;
+  opacity:.5;transition:opacity .2s;text-decoration:none;
+  animation:sfade 1s ease 2s both;
+}
+.scroll-hint:hover{opacity:.9}
+.smouse{width:22px;height:34px;border:1.5px solid rgba(255,255,255,.55);border-radius:11px;display:flex;justify-content:center;padding-top:6px}
+.swheel{width:3px;height:7px;background:var(--gold-lt);border-radius:2px;animation:sw 1.8s ease-in-out infinite}
+@keyframes sw{0%{transform:translateY(0);opacity:1}55%{transform:translateY(10px);opacity:0}56%{transform:translateY(0);opacity:0}100%{opacity:1}}
+@keyframes sfade{from{opacity:0;transform:translateY(8px)}to{opacity:.5;transform:translateY(0)}}
+
+/* SOBRE */
+#sobre{background:var(--white);position:relative;overflow:hidden}
+#sobre::before{
+  content:'';position:absolute;top:-100px;right:-100px;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(184,150,46,.07) 0%,transparent 70%);
+  pointer-events:none;
+}
+.sobre-g{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:center}
+.sobre-eye{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.sobre-eye::before{content:'';width:28px;height:1px;background:var(--gold);flex-shrink:0}
+.sobre-eye-txt{font-family:var(--fu);font-size:10px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-lt)}
+.sobre-p{font-family:var(--fb);font-size:15px;font-weight:300;line-height:1.9;color:var(--muted);margin-bottom:20px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--stone-lt);border-radius:var(--radius-sm);overflow:hidden;margin-top:36px}
+.stat{background:var(--white);padding:22px 12px;text-align:center;transition:background .3s}
+.stat:hover{background:var(--cream)}
+.stat-n{font-family:var(--fh);font-size:clamp(22px,2.5vw,28px);font-weight:800;color:var(--gold);line-height:1;margin-bottom:4px}
+.stat-l{font-family:var(--fu);font-size:9px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--stone)}
+.sobre-vis{
+  position:relative;height:460px;
+  background:linear-gradient(135deg,var(--cream),#e8e2d8);
+  border-radius:var(--radius);overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+}
+.sobre-vis::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 30% 40%,rgba(184,150,46,.1) 0%,transparent 60%),
+             radial-gradient(ellipse at 70% 70%,rgba(184,150,46,.05) 0%,transparent 50%);
+}
+.sobre-vis::after{
+  content:'';position:absolute;bottom:-10px;left:10px;right:-10px;top:10px;
+  border:1px solid rgba(184,150,46,.18);border-radius:var(--radius);z-index:0;
+}
+.sobre-logo{width:100%;height:100%;object-fit:cover;position:relative;z-index:1}
+
+/* MINISTERIOS */
+#ministerios{background:var(--cream)}
+.missoes-hd{text-align:center;margin-bottom:56px}
+.missoes-hd .desc{max-width:480px;margin:0 auto}
+.missoes-g{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.mc{
+  background:var(--white);border-radius:var(--radius);overflow:hidden;
+  display:flex;flex-direction:column;
+  box-shadow:0 2px 16px rgba(26,23,20,.06);
+  border:1px solid rgba(200,191,176,.25);
+  transition:all .4s var(--ease);
+}
+.mc:hover{
+  box-shadow:0 16px 48px rgba(26,23,20,.13);
+  transform:translateY(-5px);
+  border-color:rgba(184,150,46,.28);
+}
+.mc-logo{height:200px;overflow:hidden;position:relative}
+.mc-logo img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.mc:hover .mc-logo img{transform:scale(1.05)}
+.mc-body{padding:22px 24px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.mc-tag{display:inline-block;font-family:var(--fu);font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
+.mc-name{font-family:var(--fh);font-size:21px;font-weight:800;letter-spacing:-.02em;color:var(--charcoal);line-height:1.1;margin-bottom:2px}
+.mc-desc{font-family:var(--fb);font-size:13px;font-weight:300;line-height:1.8;color:var(--muted);flex:1}
+.mc-ig{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:var(--fu);font-size:9px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--stone);text-decoration:none;
+  padding:7px 14px;border:1px solid var(--stone-lt);border-radius:999px;
+  transition:all .25s ease;width:fit-content;margin-top:auto;
+}
+.mc-ig:hover{color:#fff;background:var(--gold);border-color:var(--gold)}
+.mc-ig svg{width:10px;height:10px}
+
+/* GALERIA */
+#galeria{background:var(--charcoal);padding:clamp(64px,8vw,96px) 0;position:relative}
+.gal-hd{text-align:center;padding:0 var(--pad) 48px}
+.gal-hd .h2{color:var(--white)}
+.gal-hd .desc{color:rgba(255,255,255,.45);margin-top:10px;max-width:460px;margin-left:auto;margin-right:auto}
+.gal-wrap{padding:0 var(--pad)}
+.gal-track{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.gal-item{
+  width:100%;height:200px;border-radius:var(--radius-sm);overflow:hidden;
+  position:relative;background:linear-gradient(135deg,#2a2724,#1a1714);cursor:pointer;
+}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.gal-item:hover img{transform:scale(1.07)}
+.gal-ph{
+  position:absolute;bottom:8px;right:8px;
+  width:28px;height:28px;background:rgba(0,0,0,.45);
+  backdrop-filter:blur(6px);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transform:scale(.7);
+  transition:opacity .25s ease,transform .25s ease;
+  pointer-events:none;
+}
+.gal-ph svg{opacity:.85;width:13px;height:13px}
+.gal-item:hover .gal-ph{opacity:1;transform:scale(1)}
+.gal-cta{display:flex;justify-content:center;padding:36px var(--pad) 0}
+.gal-cta a{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--fu);font-size:11px;font-weight:500;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--gold-pale);text-decoration:none;
+  border-bottom:1px solid var(--gold);padding-bottom:3px;
+  transition:all .2s;
+}
+.gal-cta a svg{width:13px;height:13px}
+.gal-cta a:hover{color:var(--gold-lt)}
+
+/* LIGHTBOX */
+#lightbox{
+  display:none;position:fixed;inset:0;z-index:500;
+  background:rgba(10,9,7,.92);
+  backdrop-filter:blur(6px);
+  align-items:center;justify-content:center;
+  padding:20px;
+}
+#lightbox.open{display:flex}
+#lightbox img{
+  max-width:90vw;max-height:88vh;border-radius:var(--radius-sm);
+  object-fit:contain;box-shadow:0 32px 80px rgba(0,0,0,.5);
+}
+.lb-close{
+  position:absolute;top:20px;right:20px;
+  width:40px;height:40px;background:rgba(255,255,255,.1);border:none;
+  border-radius:50%;cursor:pointer;color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .2s;font-size:18px;
+}
+.lb-close:hover{background:rgba(255,255,255,.2)}
+.lb-nav{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:44px;height:44px;background:rgba(255,255,255,.08);border:none;
+  border-radius:50%;cursor:pointer;color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .2s;
+}
+.lb-nav:hover{background:rgba(255,255,255,.18)}
+.lb-prev{left:20px}
+.lb-next{right:20px}
+
+/* LOJA */
+#loja{background:var(--white)}
+.loja-hd{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:48px;gap:10px}
+.loja-g{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.pc{
+  display:flex;flex-direction:column;background:var(--white);
+  border-radius:var(--radius);overflow:hidden;cursor:pointer;
+  box-shadow:0 2px 16px rgba(26,23,20,.06);
+  border:1px solid rgba(200,191,176,.2);
+  transition:all .4s var(--ease);
+}
+.pc:hover{box-shadow:0 12px 40px rgba(26,23,20,.12);border-color:rgba(184,150,46,.2)}
+.pc-img{aspect-ratio:1;background:var(--cream);overflow:hidden;position:relative}
+.pc-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease);position:relative;z-index:1}
+.pc:hover .pc-img img{transform:scale(1.05)}
+.pc-ph{
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:8px;
+  background:linear-gradient(135deg,#eae6df,#d4cec5);z-index:0;
+}
+.pc-ph svg{opacity:.35}
+.pc-ph span{font-family:var(--fu);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone)}
+.badge{
+  position:absolute;top:12px;left:12px;
+  font-family:var(--fu);font-size:9px;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;color:#fff;
+  padding:4px 10px;border-radius:999px;z-index:2;
+}
+.bg{background:var(--gold)}
+.bd{background:var(--charcoal)}
+.pc-body{padding:16px 18px 20px}
+.pc-name{font-family:var(--fh);font-size:17px;font-weight:800;letter-spacing:-.02em;color:var(--charcoal);margin-bottom:2px}
+.pc-sub{font-family:var(--fb);font-size:12px;font-weight:300;color:var(--stone);margin-bottom:12px}
+.pc-price{font-family:var(--fh);font-size:22px;font-weight:700;color:var(--charcoal);margin-bottom:14px}
+.pc-btn{
+  display:block;width:100%;padding:12px;text-align:center;text-decoration:none;
+  font-family:var(--fu);font-size:10px;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);background:var(--cream);
+  border:none;border-radius:999px;cursor:pointer;transition:all .3s var(--ease);
+}
+.pc-btn:hover{background:var(--gold);color:#fff}
+.loja-cta-w{display:flex;justify-content:center;margin-top:48px}
+.loja-cta{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--fu);font-size:11px;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--charcoal);text-decoration:none;
+  padding:14px 34px;border:1.5px solid var(--charcoal);border-radius:999px;
+  transition:all .3s var(--ease);
+}
+.loja-cta:hover{background:var(--charcoal);color:var(--cream)}
+.loja-cta svg{width:13px;height:13px}
+
+/* CONTATO */
+#contato{background:var(--dark)}
+.ct-hd{margin-bottom:40px;text-align:center}
+.ct-g{display:grid;grid-template-columns:1fr 1.6fr;gap:24px;align-items:start}
+.ct-panel{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:12px}
+.ci-item{display:flex;gap:14px;align-items:center;padding:14px 16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);border-radius:12px;transition:background .2s}
+.ci-item:hover{background:rgba(255,255,255,.08)}
+.ci-ico{width:36px;height:36px;flex-shrink:0;background:rgba(184,150,46,.15);border-radius:8px;display:flex;align-items:center;justify-content:center}
+.ci-ico svg{width:15px;height:15px}
+.ci-lbl{font-family:var(--fu);font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);margin-bottom:3px}
+.ci-val{font-family:var(--fb);font-size:14px;font-weight:300;color:rgba(255,255,255,.82);line-height:1.4}
+.ci-val a{color:rgba(255,255,255,.82);text-decoration:none;transition:color .2s}
+.ci-val a:hover{color:var(--gold-lt)}
+.ci-quote{padding:18px 20px;background:rgba(184,150,46,.07);border-radius:12px;border:1px solid rgba(184,150,46,.14)}
+.ci-quote p{font-family:var(--fh);font-size:17px;font-weight:600;letter-spacing:.03em;color:var(--gold-pale);line-height:1.35;margin-bottom:8px}
+.ci-quote small{font-family:var(--fu);font-size:11px;font-weight:300;color:var(--stone);line-height:1.7}
+.cf-panel{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:6px}
+.cf-panel-title{font-family:var(--fh);font-size:22px;font-weight:800;letter-spacing:-.02em;color:#fff;margin-bottom:2px}
+.cf-panel-sub{font-family:var(--fu);font-size:12px;font-weight:300;color:rgba(255,255,255,.38);margin-bottom:16px;letter-spacing:.03em}
+.cf{display:flex;flex-direction:column;gap:14px}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.lbl{display:block;font-family:var(--fu);font-size:9px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);margin-bottom:6px}
+.inp{
+  width:100%;font-family:var(--fb);font-size:14px;font-weight:300;
+  color:rgba(255,255,255,.85);background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);border-radius:8px;
+  padding:12px 14px;outline:none;appearance:none;
+  transition:border-color .25s ease,background .25s ease,box-shadow .25s ease;
+}
+.inp:focus{
+  border-color:var(--gold);
+  background:rgba(255,255,255,.09);
+  box-shadow:0 0 0 3px rgba(184,150,46,.1);
+}
+.inp::placeholder{color:rgba(255,255,255,.2)}
+.inp option{background:#2a2724;color:rgba(255,255,255,.85)}
+.fsub{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;padding:15px;
+  font-family:var(--fh);font-size:15px;font-weight:700;letter-spacing:.02em;
+  color:#fff;background:var(--gold);border:none;border-radius:var(--radius-sm);
+  cursor:pointer;transition:all .3s var(--ease);margin-top:4px;
+}
+.fsub:hover{background:var(--gold-lt);transform:translateY(-2px);box-shadow:0 8px 24px rgba(184,150,46,.25)}
+.fsub:active{transform:translateY(0)}
+.fok{
+  display:none;padding:14px;text-align:center;
+  font-family:var(--fb);font-size:13px;color:var(--gold-lt);
+  background:rgba(184,150,46,.08);border:1px solid rgba(184,150,46,.2);
+  border-radius:var(--radius-sm);
+}
+
+/* FOOTER */
+footer{position:relative;background:#0e0c09;padding:60px 0 0}
+footer::before{
+  content:'';position:absolute;top:0;left:var(--pad);right:var(--pad);height:1px;
+  background:linear-gradient(90deg,transparent,rgba(184,150,46,.28),transparent);
+}
+.footer-inner{
+  max-width:1200px;margin:0 auto;padding:0 var(--pad);
+  display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;align-items:start;
+}
+.fl{font-family:var(--fh);font-size:20px;font-weight:800;letter-spacing:-.02em;color:#fff;margin-bottom:12px}
+.fl em{font-style:normal;color:var(--gold)}
+.ft{font-family:var(--fb);font-size:13px;font-weight:300;color:rgba(255,255,255,.33);line-height:1.75;max-width:280px;margin-bottom:20px}
+.fsoc{display:flex;gap:8px}
+.fsoc a{
+  width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.1);
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,.4);text-decoration:none;transition:all .25s;
+}
+.fsoc a:hover{border-color:var(--gold);color:var(--gold-lt);background:rgba(184,150,46,.08)}
+.fsoc a svg{width:14px;height:14px}
+.fct{font-family:var(--fu);font-size:9px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--stone);margin-bottom:20px}
+.fls{list-style:none;display:flex;flex-direction:column;gap:13px}
+.fls a{font-family:var(--fb);font-size:13px;font-weight:300;color:rgba(255,255,255,.4);text-decoration:none;transition:color .25s}
+.fls a:hover{color:var(--gold-lt)}
+.fbar{
+  grid-column:1/-1;padding:24px 0 32px;
+  border-top:1px solid rgba(255,255,255,.06);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;
+  font-family:var(--fb);font-size:11px;font-weight:300;color:rgba(255,255,255,.18);
+  margin-top:40px;
+}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .loja-g{grid-template-columns:repeat(2,1fr)}
+  .missoes-g{grid-template-columns:repeat(2,1fr)}
+  .sobre-g{grid-template-columns:1fr;gap:36px}
+  .ct-g{grid-template-columns:1fr}
+  .gal-track{grid-template-columns:repeat(3,1fr)}
+  .footer-inner{grid-template-columns:1fr 1fr;gap:36px}
+  .fbar{grid-column:1/-1}
+}
+@media(max-width:768px){
+  .nlinks,.nsocial{display:none}
+  .nav-burger{display:flex}
+  .missoes-g{grid-template-columns:1fr}
+  .loja-g{grid-template-columns:repeat(2,1fr)}
+  .footer-inner{grid-template-columns:1fr}
+  .gal-track{grid-template-columns:repeat(2,1fr)}
+  .cf-row{grid-template-columns:1fr}
+  .hbtns{flex-direction:column;align-items:center}
+  .hbtn-secondary{display:none}
+  .lb-nav{display:none}
+}
+@media(max-width:480px){
+  .loja-g{grid-template-columns:1fr}
+  .gal-track{grid-template-columns:repeat(2,1fr)}
+  .gal-item{height:160px}
+  .sobre-vis{height:300px}
+}
+</style>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu" role="dialog" aria-label="Menu de navegação">
+  <a href="#hero" onclick="closeMobile()">Home</a>
+  <a href="#sobre" onclick="closeMobile()">Sobre</a>
+  <a href="#ministerios" onclick="closeMobile()">Ministérios</a>
+  <a href="#galeria" onclick="closeMobile()">Galeria</a>
+  <a href="#loja" onclick="closeMobile()">Loja</a>
+  <a href="#contato" onclick="closeMobile()">Contato</a>
+  <div class="mmline"></div>
+  <div class="mmfoot">
+    <a href="https://instagram.com/missaotransformacao" target="_blank" rel="noopener noreferrer" title="Instagram">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    </a>
+  </div>
+</div>
+
+<nav id="nav" aria-label="Navegação principal">
+  <a href="#hero" class="nlogo">
+    <img src="img/Asset_16.png" alt="Missão Transformação" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
+    <span style="display:none">Missão <b>Transformação</b></span>
+  </a>
+  <ul class="nlinks">
+    <li><a href="#hero"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>Home</a></li>
+    <li><a href="#sobre"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>Sobre</a></li>
+    <li><a href="#ministerios"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>Ministérios</a></li>
+    <li><a href="#galeria"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>Galeria</a></li>
+    <li><a href="#loja"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm0 10c-1.66 0-3-1.34-3-3h2c0 .55.45 1 1 1s1-.45 1-1h2c0 1.66-1.34 3-3 3z"/></svg>Loja</a></li>
+    <li><a href="#contato"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>Contato</a></li>
+  </ul>
+  <div class="nsocial">
+    <a href="https://instagram.com/missaotransformacao" target="_blank" rel="noopener noreferrer" class="nig" title="Instagram">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    </a>
+    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="nig" title="YouTube">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+    </a>
+    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="nig" title="Facebook">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    </a>
+  </div>
+  <button class="nav-burger" id="navBurger" aria-label="Abrir menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section id="hero" aria-label="Banner principal">
+  <div class="hslide s1 on"><div class="hbg" style="background-image:url('img/Slide_001.jpg')"></div><div class="hov"></div></div>
+  <div class="hslide s2"><div class="hbg" style="background-image:url('img/Slide_002.jpg')"></div><div class="hov"></div></div>
+  <div class="hslide s3"><div class="hbg" style="background-image:url('img/Slide_003.jpg')"></div><div class="hov"></div></div>
+  <div class="hslide s4"><div class="hbg" style="background-image:url('img/Slide_004.jpg')"></div><div class="hov"></div></div>
+  <div class="hbody">
+    <div class="heye">Curitiba · Paraná · Brasil</div>
+    <h1 class="hh1"><em>Missão</em> Transformação</h1>
+    <p class="hp">Uma comunidade comprometida com a transformação de vidas, famílias e gerações em Curitiba e além.</p>
+    <div class="hbtns">
+      <a href="#sobre" class="hbtn hbtn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+        Conhecer a Missão
+      </a>
+      <a href="https://instagram.com/missaotransformacao" target="_blank" rel="noopener noreferrer" class="hbtn hbtn-secondary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        Seguir no Instagram
+      </a>
+    </div>
+  </div>
+  <div class="hdots" role="tablist" aria-label="Slides">
+    <div class="hdot on" data-i="0" role="tab" aria-label="Slide 1" tabindex="0"></div>
+    <div class="hdot" data-i="1" role="tab" aria-label="Slide 2" tabindex="0"></div>
+    <div class="hdot" data-i="2" role="tab" aria-label="Slide 3" tabindex="0"></div>
+    <div class="hdot" data-i="3" role="tab" aria-label="Slide 4" tabindex="0"></div>
+  </div>
+  <a href="#sobre" class="scroll-hint" aria-label="Rolar para baixo">
+    <div class="smouse"><div class="swheel"></div></div>
+  </a>
+</section>
+
+<div class="divider" role="separator"></div>
+
+<section id="sobre" class="sec">
+  <div class="sobre-g wrap">
+    <div class="reveal">
+      <div class="sobre-eye"><span class="sobre-eye-txt">Nossa história</span></div>
+      <h2 class="h2">Transformando vidas <em>desde 2019</em></h2>
+      <p class="sobre-p">A Missão Transformação nasceu do desejo de ver famílias, jovens e casais crescerem com propósito em Curitiba, no Paraná e em todo o Brasil. Somos uma comunidade comprometida com a transformação genuína de vidas por meio da fé, do serviço e do relacionamento.</p>
+      <p class="sobre-p">Acreditamos que cada pessoa carrega um chamado único — e que, juntos, somos mais fortes. Por isso, desenvolvemos ministérios que atendem diferentes etapas da vida: homens, jovens, casais, mulheres e famílias encontram aqui um espaço de crescimento, comunhão e propósito.</p>
+      <p class="sobre-p">Com múltiplos ministérios que alcançam diferentes faixas etárias e contextos, somos uma comunidade que caminha junta na fé e no propósito — firmes no que cremos, abertos ao próximo.</p>
+      <div class="stats">
+        <div class="stat"><div class="stat-n">2019</div><div class="stat-l">Fundação</div></div>
+        <div class="stat"><div class="stat-n">8+</div><div class="stat-l">Ministérios</div></div>
+        <div class="stat"><div class="stat-n">CWB</div><div class="stat-l">Curitiba PR</div></div>
+      </div>
+    </div>
+    <div class="sobre-vis reveal reveal-delay-1">
+      <img src="img/Screenshot_2.png" class="sobre-logo" alt="Logo Missão Transformação" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<div class="divider" role="separator"></div>
+
+<section id="ministerios" class="sec">
+  <div class="wrap">
+    <div class="missoes-hd reveal">
+      <div class="eyebrow">Comunidade</div>
+      <h2 class="h2">A <em>Missão</em></h2>
+      <p class="desc">Cada ministério tem sua identidade, sua missão e seu chamado único — juntos formamos uma comunidade que transforma.</p>
+    </div>
+    <div class="missoes-g">
+      <article class="mc">
+        <div class="mc-logo"><img src="img/Screenshot_3.png" alt="Ministério Forja — formação de homens" loading="lazy"></div>
+        <div class="mc-body">
+          <span class="mc-tag">Homens</span>
+          <h3 class="mc-name">Forja</h3>
+          <p class="mc-desc">Ministério de formação de homens com caráter, propósito e fé, preparados para impactar suas famílias, seu trabalho e sua comunidade.</p>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="mc-ig">Instagram <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </div>
+      </article>
+      <article class="mc">
+        <div class="mc-logo"><img src="img/Screenshot_4.png" alt="Ministério Adrenalina — jovens" loading="lazy"></div>
+        <div class="mc-body">
+          <span class="mc-tag">Jovens</span>
+          <h3 class="mc-name">Adrenalina</h3>
+          <p class="mc-desc">Uma frente voltada para jovens, com energia, identidade e propósito, conectando vidas à verdade de Cristo por meio de experiências marcantes.</p>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="mc-ig">Instagram <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </div>
+      </article>
+      <article class="mc">
+        <div class="mc-logo"><img src="img/Screenshot_5.png" alt="Missão Casais — fortalecimento do matrimônio" loading="lazy"></div>
+        <div class="mc-body">
+          <span class="mc-tag">Família</span>
+          <h3 class="mc-name">Missão Casais</h3>
+          <p class="mc-desc">Ministério dedicado ao fortalecimento do matrimônio, da aliança e da construção de lares firmados em propósito e unidade.</p>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="mc-ig">Instagram <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </div>
+      </article>
+      <article class="mc">
+        <div class="mc-logo"><img src="img/Screenshot_6.png" alt="Legendários — legado e identidade" loading="lazy"></div>
+        <div class="mc-body">
+          <span class="mc-tag">Legado</span>
+          <h3 class="mc-name">Legendários</h3>
+          <p class="mc-desc">Uma jornada que marcou homens e continua sendo parte da história da missão, despertando identidade, coragem e compromisso.</p>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="mc-ig">Instagram <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </div>
+      </article>
+      <article class="mc">
+        <div class="mc-logo"><img src="img/Screenshot_8.png" alt="Legado — formação de líderes intergeracionais" loading="lazy"></div>
+        <div class="mc-body">
+          <span class="mc-tag">Gerações</span>
+          <h3 class="mc-name">Legado</h3>
+          <p class="mc-desc">Um chamado para formar líderes e deixar marcas que atravessem gerações, com impacto dentro e fora da igreja.</p>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="mc-ig">Instagram <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </div>
+      </article>
+      <article class="mc">
+        <div class="mc-logo"><img src="img/Screenshot_7.png" alt="REM — Reto de Empoderamiento Matrimonial" loading="lazy"></div>
+        <div class="mc-body">
+          <span class="mc-tag">Casais</span>
+          <h3 class="mc-name">REM</h3>
+          <p class="mc-desc">Reto de Empoderamiento Matrimonial — uma jornada intencional para casais que desejam amadurecer sua união e viver um casamento saudável.</p>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="mc-ig">Instagram <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </div>
+      </article>
+      <article class="mc">
+        <div class="mc-logo"><img src="img/Screenshot_9.png" alt="Conexão Mulheres — encontro e identidade feminina" loading="lazy"></div>
+        <div class="mc-body">
+          <span class="mc-tag">Mulheres</span>
+          <h3 class="mc-name">Conexão Mulheres</h3>
+          <p class="mc-desc">Um espaço de encontro, identidade e fortalecimento para mulheres que desejam crescer juntas na fé, no cuidado e no propósito.</p>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="mc-ig">Instagram <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </div>
+      </article>
+      <article class="mc">
+        <div class="mc-logo"><img src="img/Screenshot_10.png" alt="Mulheres em Oração — intercessão e fé" loading="lazy"></div>
+        <div class="mc-body">
+          <span class="mc-tag">Oração</span>
+          <h3 class="mc-name">Mulheres em Oração</h3>
+          <p class="mc-desc">Mulheres unidas em intercessão, buscando a Deus juntas e crendo no poder transformador da oração sobre famílias e gerações.</p>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="mc-ig">Instagram <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="divider" role="separator"></div>
+
+<section id="galeria" aria-label="Galeria de fotos">
+  <div class="gal-hd reveal">
+    <div class="eyebrow" style="color:var(--gold-lt)">Registros</div>
+    <h2 class="h2 h2--w">Galeria de <em>Fotos</em></h2>
+    <p class="desc desc--w">Registros dos nossos eventos, encontros e momentos de transformação.</p>
+  </div>
+  <div class="gal-wrap">
+    <div class="gal-track" id="gTrack">
+      <div class="gal-item" data-img="img/w-001.jpg"><img src="img/w-001.jpg" alt="Evento Missão Transformação 1" loading="lazy"><div class="gal-ph"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" width="13"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      <div class="gal-item" data-img="img/w-002.jpg"><img src="img/w-002.jpg" alt="Evento Missão Transformação 2" loading="lazy"><div class="gal-ph"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" width="13"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      <div class="gal-item" data-img="img/w-003.jpg"><img src="img/w-003.jpg" alt="Evento Missão Transformação 3" loading="lazy"><div class="gal-ph"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" width="13"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      <div class="gal-item" data-img="img/w-004.jpg"><img src="img/w-004.jpg" alt="Evento Missão Transformação 4" loading="lazy"><div class="gal-ph"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" width="13"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      <div class="gal-item" data-img="img/w-005.jpg"><img src="img/w-005.jpg" alt="Evento Missão Transformação 5" loading="lazy"><div class="gal-ph"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" width="13"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      <div class="gal-item" data-img="img/w-006.jpg"><img src="img/w-006.jpg" alt="Evento Missão Transformação 6" loading="lazy"><div class="gal-ph"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" width="13"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      <div class="gal-item" data-img="img/w-007.jpg"><img src="img/w-007.jpg" alt="Evento Missão Transformação 7" loading="lazy"><div class="gal-ph"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" width="13"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      <div class="gal-item" data-img="img/w-008.jpg"><img src="img/w-008.jpg" alt="Evento Missão Transformação 8" loading="lazy"><div class="gal-ph"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" width="13"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      <div class="gal-item" data-img="img/w-009.jpg"><img src="img/w-009.jpg" alt="Evento Missão Transformação 9" loading="lazy"><div class="gal-ph"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" width="13"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      <div class="gal-item" data-img="img/w-010.jpg"><img src="img/w-010.jpg" alt="Evento Missão Transformação 10" loading="lazy"><div class="gal-ph"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" width="13"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      <div class="gal-item" data-img="img/Slide_001.jpg"><img src="img/Slide_001.jpg" alt="Missão Transformação — momento de comunidade" loading="lazy"><div class="gal-ph"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" width="13"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      <div class="gal-item" data-img="img/Slide_003.jpg"><img src="img/Slide_003.jpg" alt="Missão Transformação — encontro especial" loading="lazy"><div class="gal-ph"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" width="13"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+    </div>
+  </div>
+  <div class="gal-cta">
+    <a href="https://www.flickr.com/photos/198643599@N04/albums/" target="_blank" rel="noopener noreferrer">
+      Ver todas as fotos no Flickr
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Visualizador de foto">
+  <button class="lb-close" id="lbClose" aria-label="Fechar">✕</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Foto anterior">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M15 18l-6-6 6-6"/></svg>
+  </button>
+  <img id="lbImg" src="" alt="Foto ampliada">
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Próxima foto">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"/></svg>
+  </button>
+</div>
+
+<div class="divider" role="separator"></div>
+
+<section id="loja" class="sec">
+  <div class="wrap">
+    <div class="loja-hd reveal">
+      <div class="eyebrow">E-Shop</div>
+      <h2 class="h2">Loja <em>Oficial</em></h2>
+      <p class="desc">Produtos exclusivos dos nossos ministérios. Vista sua identidade.</p>
+    </div>
+    <div class="loja-g">
+      <div class="pc"><div class="pc-img"><img src="img/e-001.jpg" alt="Boné Missão Transformação — Branco/Bege" loading="lazy"><div class="pc-ph"><svg viewBox="0 0 40 32" fill="none" width="32"><rect x="1" y="1" width="38" height="30" rx="3" stroke="#8c8070" stroke-width="1.5"/><circle cx="13" cy="11" r="4" stroke="#8c8070" stroke-width="1.5"/><path d="M1 22l9-7 8 6 6-5 15 10" stroke="#8c8070" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Boné Missão</span></div><span class="badge bg">Novo</span></div><div class="pc-body"><div class="pc-name">Boné Missão</div><div class="pc-sub">Transformação · Branco/Bege</div><div class="pc-price">R$ 69,90</div><a href="#contato" class="pc-btn">Encomendar</a></div></div>
+      <div class="pc"><div class="pc-img"><img src="img/e-002.jpg" alt="Boné Forja — Since 2019" loading="lazy"><div class="pc-ph"><svg viewBox="0 0 40 32" fill="none" width="32"><rect x="1" y="1" width="38" height="30" rx="3" stroke="#8c8070" stroke-width="1.5"/><circle cx="13" cy="11" r="4" stroke="#8c8070" stroke-width="1.5"/><path d="M1 22l9-7 8 6 6-5 15 10" stroke="#8c8070" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Boné Forja</span></div><span class="badge bd">Destaque</span></div><div class="pc-body"><div class="pc-name">Boné Forja</div><div class="pc-sub">Forja · Since 2019</div><div class="pc-price">R$ 69,90</div><a href="#contato" class="pc-btn">Encomendar</a></div></div>
+      <div class="pc"><div class="pc-img"><img src="img/e-003.jpg" alt="Boné Adrenalina — Since 2019" loading="lazy"><div class="pc-ph"><svg viewBox="0 0 40 32" fill="none" width="32"><rect x="1" y="1" width="38" height="30" rx="3" stroke="#8c8070" stroke-width="1.5"/><circle cx="13" cy="11" r="4" stroke="#8c8070" stroke-width="1.5"/><path d="M1 22l9-7 8 6 6-5 15 10" stroke="#8c8070" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Boné Adrenalina</span></div><span class="badge bg">Novo</span></div><div class="pc-body"><div class="pc-name">Boné Adrenalina</div><div class="pc-sub">Adrenalina · Since 2019</div><div class="pc-price">R$ 69,90</div><a href="#contato" class="pc-btn">Encomendar</a></div></div>
+      <div class="pc"><div class="pc-img"><img src="img/e-004.jpg" alt="Boné Missão Casais — Azul/Branco" loading="lazy"><div class="pc-ph"><svg viewBox="0 0 40 32" fill="none" width="32"><rect x="1" y="1" width="38" height="30" rx="3" stroke="#8c8070" stroke-width="1.5"/><circle cx="13" cy="11" r="4" stroke="#8c8070" stroke-width="1.5"/><path d="M1 22l9-7 8 6 6-5 15 10" stroke="#8c8070" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Boné Casais</span></div></div><div class="pc-body"><div class="pc-name">Boné Casais</div><div class="pc-sub">Missão Casais · Azul/Branco</div><div class="pc-price">R$ 69,90</div><a href="#contato" class="pc-btn">Encomendar</a></div></div>
+      <div class="pc"><div class="pc-img"><img src="img/s-001.jpg" alt="Camiseta Transformação — Oversized Bege" loading="lazy"><div class="pc-ph"><svg viewBox="0 0 40 32" fill="none" width="32"><rect x="1" y="1" width="38" height="30" rx="3" stroke="#8c8070" stroke-width="1.5"/><circle cx="13" cy="11" r="4" stroke="#8c8070" stroke-width="1.5"/><path d="M1 22l9-7 8 6 6-5 15 10" stroke="#8c8070" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Camiseta Missão</span></div></div><div class="pc-body"><div class="pc-name">Camiseta Transformação</div><div class="pc-sub">Missão · Oversized · Bege</div><div class="pc-price">R$ 89,90</div><a href="#contato" class="pc-btn">Encomendar</a></div></div>
+      <div class="pc"><div class="pc-img"><img src="img/s-002.jpg" alt="Camiseta Família — Oversized Verde" loading="lazy"><div class="pc-ph"><svg viewBox="0 0 40 32" fill="none" width="32"><rect x="1" y="1" width="38" height="30" rx="3" stroke="#8c8070" stroke-width="1.5"/><circle cx="13" cy="11" r="4" stroke="#8c8070" stroke-width="1.5"/><path d="M1 22l9-7 8 6 6-5 15 10" stroke="#8c8070" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Camiseta Família</span></div></div><div class="pc-body"><div class="pc-name">Camiseta Família</div><div class="pc-sub">Missão Família · Oversized · Verde</div><div class="pc-price">R$ 89,90</div><a href="#contato" class="pc-btn">Encomendar</a></div></div>
+      <div class="pc"><div class="pc-img"><img src="img/s-003.jpg" alt="Camiseta Adrenalina — Oversized Azul" loading="lazy"><div class="pc-ph"><svg viewBox="0 0 40 32" fill="none" width="32"><rect x="1" y="1" width="38" height="30" rx="3" stroke="#8c8070" stroke-width="1.5"/><circle cx="13" cy="11" r="4" stroke="#8c8070" stroke-width="1.5"/><path d="M1 22l9-7 8 6 6-5 15 10" stroke="#8c8070" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Camiseta Adrenalina</span></div><span class="badge bg">Novo</span></div><div class="pc-body"><div class="pc-name">Camiseta Adrenalina</div><div class="pc-sub">Adrenalina · Oversized · Azul</div><div class="pc-price">R$ 89,90</div><a href="#contato" class="pc-btn">Encomendar</a></div></div>
+      <div class="pc"><div class="pc-img"><img src="img/s-004.jpg" alt="Camiseta Forja — Oversized Camuflado" loading="lazy"><div class="pc-ph"><svg viewBox="0 0 40 32" fill="none" width="32"><rect x="1" y="1" width="38" height="30" rx="3" stroke="#8c8070" stroke-width="1.5"/><circle cx="13" cy="11" r="4" stroke="#8c8070" stroke-width="1.5"/><path d="M1 22l9-7 8 6 6-5 15 10" stroke="#8c8070" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Camiseta Forja</span></div></div><div class="pc-body"><div class="pc-name">Camiseta Forja</div><div class="pc-sub">Forja · Oversized · Camuflado</div><div class="pc-price">R$ 89,90</div><a href="#contato" class="pc-btn">Encomendar</a></div></div>
+    </div>
+    <div class="loja-cta-w"><a href="#contato" class="loja-cta">Encomendar via Contato <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+  </div>
+</section>
+
+<div class="divider" role="separator"></div>
+
+<section id="contato" class="sec">
+  <div class="wrap">
+    <div class="ct-hd">
+      <div class="eyebrow" style="color:var(--gold-lt)">Fale conosco</div>
+      <h2 class="h2 h2--w">Entre em <em>Contato</em></h2>
+      <p class="desc desc--w" style="max-width:520px;margin:0 auto">Tem dúvidas, quer conhecer mais ou participar de algum ministério? Estamos aqui.</p>
+    </div>
+    <div class="ct-g">
+      <div class="ct-panel">
+        <div class="ci-item">
+          <div class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><div class="ci-lbl">Localização</div><div class="ci-val">Curitiba, Paraná, Brasil</div></div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><div class="ci-lbl">Email</div><div class="ci-val"><a href="mailto:adm@transformacao.org.br">adm@transformacao.org.br</a></div></div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="var(--gold)" stroke="none"/></svg></div>
+          <div><div class="ci-lbl">Instagram</div><div class="ci-val"><a href="https://instagram.com/missaotransformacao" target="_blank" rel="noopener noreferrer">@missaotransformacao</a></div></div>
+        </div>
+        <div class="ci-quote">
+          <p>JUNTOS NA JORNADA, FIRMES NO PROPÓSITO.</p>
+          <small>Uma missão que não existe apenas para reunir pessoas, mas para formar vidas transformadas — em Curitiba e além.</small>
+        </div>
+      </div>
+      <div class="cf-panel">
+        <div class="cf-panel-title">Envie sua mensagem</div>
+        <div class="cf-panel-sub">Preencha o formulário e retornaremos o mais breve possível.</div>
+        <form class="cf" onsubmit="doForm(event)" novalidate>
+          <div class="cf-row">
+            <div><label class="lbl" for="f-nome">Nome *</label><input id="f-nome" type="text" class="inp" placeholder="Seu nome" required autocomplete="name"></div>
+            <div><label class="lbl" for="f-tel">Telefone</label><input id="f-tel" type="tel" class="inp" placeholder="(41) 99999-9999" autocomplete="tel"></div>
+          </div>
+          <div><label class="lbl" for="f-email">Email *</label><input id="f-email" type="email" class="inp" placeholder="seu@email.com" required autocomplete="email"></div>
+          <div>
+            <label class="lbl" for="f-min">Ministério de interesse</label>
+            <select id="f-min" class="inp">
+              <option value="">Selecione...</option>
+              <option>Forja</option>
+              <option>Adrenalina</option>
+              <option>Missão Casais</option>
+              <option>Legendários</option>
+              <option>Legado</option>
+              <option>REM</option>
+              <option>Conexão Mulheres</option>
+              <option>Mulheres em Oração</option>
+              <option>Geral / Outro</option>
+            </select>
+          </div>
+          <div><label class="lbl" for="f-msg">Mensagem *</label><textarea id="f-msg" class="inp" rows="5" placeholder="Como podemos ajudar?" style="resize:vertical" required></textarea></div>
+          <button type="submit" class="fsub" id="fb">Enviar Mensagem</button>
+          <div class="fok" id="fok" role="alert">✓ Mensagem enviada! Entraremos em contato em breve.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="fl">MISSÃO <em>TRANSFORMAÇÃO</em></div>
+      <p class="ft">Uma comunidade comprometida com fé, discipulado, família e transformação de vidas em Curitiba, no Paraná e além.</p>
+      <div class="fsoc">
+        <a href="https://instagram.com/missaotransformacao" target="_blank" rel="noopener noreferrer" title="Instagram">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" title="YouTube">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+        </a>
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="fct">Ministérios</div>
+      <ul class="fls">
+        <li><a href="#ministerios">Forja</a></li>
+        <li><a href="#ministerios">Adrenalina</a></li>
+        <li><a href="#ministerios">Missão Casais</a></li>
+        <li><a href="#ministerios">Legendários</a></li>
+        <li><a href="#ministerios">Legado</a></li>
+        <li><a href="#ministerios">REM</a></li>
+        <li><a href="#ministerios">Conexão Mulheres</a></li>
+        <li><a href="#ministerios">Mulheres em Oração</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fct">Links</div>
+      <ul class="fls">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#loja">Loja</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="https://www.flickr.com/photos/198643599@N04/albums/" target="_blank" rel="noopener noreferrer">Flickr</a></li>
+        <li><a href="mailto:adm@transformacao.org.br">adm@transformacao.org.br</a></li>
+      </ul>
+    </div>
+    <div class="fbar">
+      <span>© 2026 Missão Transformação — Curitiba, Paraná, Brasil</span>
+      <span>Site institucional e de divulgação</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// HERO SLIDESHOW
+(function(){
+  let cur = 0;
+  const slides = document.querySelectorAll('.hslide');
+  const dots = document.querySelectorAll('.hdot');
+  function goTo(n) {
+    slides[cur].classList.remove('on');
+    dots[cur].classList.remove('on');
+    cur = (n + slides.length) % slides.length;
+    slides[cur].classList.add('on');
+    dots[cur].classList.add('on');
+  }
+  dots.forEach(d => {
+    d.addEventListener('click', () => goTo(+d.dataset.i));
+    d.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); goTo(+d.dataset.i); } });
+  });
+  setInterval(() => goTo(cur + 1), 8000);
+})();
+
+// NAV SHRINK
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('s', scrollY > 60);
+}, { passive: true });
+
+// MOBILE MENU
+const burger = document.getElementById('navBurger');
+const mobileMenu = document.getElementById('mobile-menu');
+function closeMobile() {
+  mobileMenu.classList.remove('open');
+  burger.classList.remove('open');
+  burger.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+burger.addEventListener('click', () => {
+  const open = mobileMenu.classList.toggle('open');
+  burger.classList.toggle('open', open);
+  burger.setAttribute('aria-expanded', String(open));
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobile(); });
+
+// HIDE PRODUCT PLACEHOLDERS
+document.querySelectorAll('.pc-img img').forEach(img => {
+  const hide = () => { const ph = img.parentElement.querySelector('.pc-ph'); if (ph) ph.style.display = 'none'; };
+  if (img.complete && img.naturalWidth > 0) hide();
+  else img.addEventListener('load', hide);
+});
+
+// FORM SUBMIT
+function doForm(e) {
+  e.preventDefault();
+  const b = document.getElementById('fb');
+  b.textContent = 'Enviando...';
+  b.disabled = true;
+  setTimeout(() => {
+    e.target.reset();
+    b.style.display = 'none';
+    document.getElementById('fok').style.display = 'block';
+  }, 1200);
+}
+
+// LIGHTBOX
+(function(){
+  const items = document.querySelectorAll('.gal-item');
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const imgs = Array.from(items).map(i => ({ src: i.dataset.img, alt: i.querySelector('img').alt }));
+  let cur = 0;
+
+  function open(idx) {
+    cur = idx;
+    lbImg.src = imgs[cur].src;
+    lbImg.alt = imgs[cur].alt;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function close() {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+    lbImg.src = '';
+  }
+  function prev() { cur = (cur - 1 + imgs.length) % imgs.length; lbImg.src = imgs[cur].src; lbImg.alt = imgs[cur].alt; }
+  function next() { cur = (cur + 1) % imgs.length; lbImg.src = imgs[cur].src; lbImg.alt = imgs[cur].alt; }
+
+  items.forEach((item, i) => item.addEventListener('click', () => open(i)));
+  document.getElementById('lbClose').addEventListener('click', close);
+  document.getElementById('lbPrev').addEventListener('click', prev);
+  document.getElementById('lbNext').addEventListener('click', next);
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') prev();
+    if (e.key === 'ArrowRight') next();
+  });
+})();
+
+// SCROLL REVEAL
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+// STAGGER CARDS (ministry, product, gallery)
+function staggerCards(selector, delayStep) {
+  document.querySelectorAll(selector).forEach((c, i) => {
+    c.style.opacity = '0';
+    c.style.transform = 'translateY(22px)';
+    c.style.transition = `opacity .6s cubic-bezier(.22,1,.36,1) ${i * delayStep}s, transform .6s cubic-bezier(.22,1,.36,1) ${i * delayStep}s`;
+    const obs = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) { c.style.opacity = '1'; c.style.transform = 'translateY(0)'; obs.unobserve(c); }
+    }, { threshold: .08 });
+    obs.observe(c);
+  });
+}
+staggerCards('.mc', .08);
+staggerCards('.pc', .06);
+staggerCards('.gal-item', .035);
+</script>
+</body>
+</html>
